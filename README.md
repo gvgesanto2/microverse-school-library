@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# microverse-my-enumerable
+# School Library
 
-> A ruby app that implements list methods as all?, any?, filter, min and max
+> A ruby App that models a School Library.
 
 ## Built With
 
@@ -16,12 +16,6 @@
 - GitHub: [@gvgesanto2](https://github.com/gvgesanto2)
 - Twitter: [@GabrielSanto997](https://twitter.com/GabrielSanto997)
 - LinkedIn: [Gabriel Santo](https://linkedin.com/in/gabriel-santo-5882a71b2/)
-
-👤 **Walter Velasquez**
-
-- GitHub: [@Sirvelasque](https://github.com/sirvelasque)
-- Twitter: [@WalterWalte](https://twitter.com/WalteWalter)
-- LinkedIn: [Walter Velasquez](https://linkedin.com/in/sirvelasque/)
 
 ## 🤝 Contributing
 
