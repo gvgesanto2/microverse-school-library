@@ -2,7 +2,11 @@ class Person
   attr_accessor :name, :age
   attr_reader :id
 
+  @@num_instances = 0
+
   def initialize(age:, name: 'Unknown', parent_permission: true)
+    @@num_instances += 1
+    @id = @@num_instances
     @name = name
     @age = age
     @parent_permission = parent_permission
