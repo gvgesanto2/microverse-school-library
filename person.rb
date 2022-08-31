@@ -9,6 +9,7 @@ class Person < Nameable
   @@num_instances = 0
 
   def initialize(age:, name: 'Unknown', parent_permission: true)
+    super()
     @@num_instances += 1
     @id = @@num_instances
     @name = name
@@ -33,7 +34,7 @@ end
 
 person = Person.new(age: 22, name: '   maximilianus   ')
 puts person.correct_name
-trimmedPerson = TrimmerDecorator.new(person)
-puts trimmedPerson.correct_name 
-capitalizedTrimmedPerson = CapitalizeDecorator.new(trimmedPerson)
-puts capitalizedTrimmedPerson.correct_name
+trimmed_person = TrimmerDecorator.new(person)
+puts trimmed_person.correct_name
+capitalized_trimmed_person = CapitalizeDecorator.new(trimmed_person)
+puts capitalized_trimmed_person.correct_name
