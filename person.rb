@@ -32,7 +32,7 @@ class Person < Nameable
   end
 end
 
-person = Person.new(age: 22, name: '   maximilianus   ')
+person = Person.new(age: 22, name: 'maximilianus')
 puts person.correct_name
 trimmed_person = TrimmerDecorator.new(person)
 puts trimmed_person.correct_name
