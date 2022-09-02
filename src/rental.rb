@@ -5,7 +5,7 @@ class Rental
   def initialize(person, book)
     self.person = person
     self.book = book
-    @date = DateTime.now()
+    @date = DateTime.now
   end
 
   def person=(person)
