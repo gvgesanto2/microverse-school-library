@@ -10,11 +10,11 @@ class PeopleController
     @options = [
       {
         title: 'Register a student',
-        handler: lambda { @students_controller.handle_register_student }
+        handler: -> { @students_controller.handle_register_student }
       },
       {
         title: 'Register a teacher',
-        handler: lambda { @teachers_controller.handle_register_teacher }
+        handler: -> { @teachers_controller.handle_register_teacher }
       }
     ]
   end
@@ -33,13 +33,14 @@ class PeopleController
     @students_controller.handle_list_students
   end
 
-  def has_people?
-    @teachers_controller.has_teachers? || @students_controller.has_students?
+  def people?
+    @teachers_controller.teachers? || @students_controller.students?
   end
 
   def find_person_by_id(id)
     teacher = @teachers_controller.find_teacher_by_id(id)
     return teacher if teacher
+
     @students_controller.find_student_by_id(id)
   end
 end

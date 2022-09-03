@@ -14,7 +14,7 @@ class StudentsController
   end
 
   def handle_register_student
-    if @classrooms_controller.has_classrooms?
+    if @classrooms_controller.classrooms?
       name = @students_view.get_name
       age = @students_view.get_age
       parent_permission = @students_view.get_parent_permission
@@ -29,7 +29,9 @@ class StudentsController
         @students_view.print_message('Classroom label invalid.')
       end
     else
-      @students_view.print_message('No classrooms available. Please, register a classroom before registering a student.')
+      @students_view.print_message(
+        'No classrooms available. Please, register a classroom before registering a student.'
+      )
     end
   end
 
@@ -41,7 +43,7 @@ class StudentsController
     @students.find { |student| student.id == id }
   end
 
-  def has_students?
+  def students?
     !@students.empty?
   end
 end

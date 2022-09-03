@@ -32,7 +32,7 @@ class BooksController
     book_chosen ? @books[book_chosen - 1] : nil
   end
 
-  def has_books?
+  def books?
     !@books.empty?
   end
 end

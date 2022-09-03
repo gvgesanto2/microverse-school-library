@@ -28,7 +28,7 @@ class TeachersController
     @teachers.find { |teacher| teacher.id == id }
   end
 
-  def has_teachers?
+  def teachers?
     !@teachers.empty?
   end
 end

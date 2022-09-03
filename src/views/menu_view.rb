@@ -23,7 +23,6 @@ class MenuView
   end
 
   def not_out_bounds?(input)
-    input > 0 && input <= @options.length
+    input.positive? && input <= @options.length
   end
 end
-

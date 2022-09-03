@@ -15,39 +15,42 @@ class AppController
     @options = [
       {
         title: 'List all books',
-        handler: lambda { @books_controller.handle_list_books }
+        handler: -> { @books_controller.handle_list_books }
       },
       {
         title: 'List all people',
-        handler: lambda { @people_controller.handle_list_people }
+        handler: -> { @people_controller.handle_list_people }
       },
       {
         title: 'List all classrooms',
-        handler: lambda { @classrooms_controller.handle_list_classrooms }
+        handler: -> { @classrooms_controller.handle_list_classrooms }
       },
       {
         title: 'Register a book',
-        handler: lambda { @books_controller.handle_register_book }
+        handler: -> { @books_controller.handle_register_book }
       },
       {
         title: 'Register a person',
-        handler: lambda { @people_controller.handle_register_person }
+        handler: -> { @people_controller.handle_register_person }
       },
       {
         title: 'Register a classroom',
-        handler: lambda { @classrooms_controller.handle_register_classroom }
+        handler: -> { @classrooms_controller.handle_register_classroom }
       },
       {
         title: 'Rent a book',
-        handler: lambda { @rental_controller.handle_register_rental }
+        handler: -> { @rental_controller.handle_register_rental }
       },
       {
         title: 'List all rentals of a person',
-        handler: lambda { @rental_controller.handle_list_rentals_by_person }
+        handler: -> { @rental_controller.handle_list_rentals_by_person }
       },
       {
         title: 'Exit',
-        handler: lambda { puts 'Exit'; @loop = false }
+        handler: lambda {
+                   puts 'Exit'
+                   @loop = false
+                 }
       }
     ]
   end
@@ -56,7 +59,7 @@ class AppController
     options_titles = @options.map { |option| option[:title] }
     main_menu_view = MenuView.new(options_titles)
 
-    while @loop do
+    while @loop
       main_menu_view.show_options
       user_option = main_menu_view.get_user_option
 

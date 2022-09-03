@@ -1,7 +1,6 @@
 def get_user_input(message)
   print message
-  user_input = gets.chomp
-  user_input
+  gets.chomp
 end
 
 def bind_frame_up(frame, frame_to_bind)
@@ -42,12 +41,11 @@ def gen_frame(lines_to_print, padding)
   frame.push(border_top_str)
 
   lines_to_print.each do |line|
-    content_left = '║' + (' ' * padding)
-    content_right = (' ' * (padding + longest_line.length - line.length)) + '║'
+    content_left = "║#{' ' * padding}"
+    content_right = "#{' ' * (padding + longest_line.length - line.length)}║"
     frame.push(content_left + line + content_right)
   end
 
   frame.push(border_bottom_str)
   frame
 end
-

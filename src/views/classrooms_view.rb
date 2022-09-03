@@ -7,7 +7,7 @@ class ClassroomsView
 
   def print_classrooms(classrooms)
     if classrooms.empty?
-      puts "No classrooms available."
+      puts 'No classrooms available.'
     else
       lines_to_print = classrooms.map.with_index do |classroom, index|
         "#{index + 1}- #{get_classroom_string(classroom)}"

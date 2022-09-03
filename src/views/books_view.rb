@@ -11,7 +11,7 @@ class BooksView
 
   def print_books(books)
     if books.empty?
-      puts "No books available."
+      puts 'No books available.'
     else
       lines_to_print = books.map.with_index do |book, index|
         "#{index + 1}- #{get_book_string(book)}"

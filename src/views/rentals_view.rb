@@ -7,7 +7,7 @@ class RentalsView
 
   def print_rentals(rentals)
     if rentals.empty?
-      puts "No rentals available."
+      puts 'No rentals available.'
     else
       lines_to_print = rentals.map.with_index do |rental, index|
         "#{index + 1}- #{get_rental_string(rental)}"

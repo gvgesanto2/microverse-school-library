@@ -13,7 +13,7 @@ class ClassroomsController
     @classrooms.push(new_classroom)
   end
 
-  def has_classrooms?
+  def classrooms?
     !@classrooms.empty?
   end
 

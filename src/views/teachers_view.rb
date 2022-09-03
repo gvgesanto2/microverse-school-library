@@ -15,7 +15,7 @@ class TeachersView
 
   def print_teachers(teachers)
     if teachers.empty?
-      puts "No teachers available."
+      puts 'No teachers available.'
     else
       lines_to_print = teachers.map.with_index do |teacher, index|
         "#{index + 1}- #{get_teacher_string(teacher)}"

@@ -15,13 +15,13 @@ class RentalsController
   end
 
   def handle_register_rental
-    unless @people_controller.has_people?
+    unless @people_controller.people?
       @rentals_view.print_message('No people available. Please, register a person before renting a book.')
-      return;
+      return
     end
-    unless @books_controller.has_books?
+    unless @books_controller.books?
       @rentals_view.print_message('No books available. Please, register a book before renting a book.')
-      return;
+      return
     end
 
     @people_controller.handle_list_people
@@ -31,14 +31,14 @@ class RentalsController
 
     unless person
       @rentals_view.print_message('Person ID invalid.')
-      return;
+      return
     end
 
     book = @books_controller.list_as_options
 
     unless book
       @rentals_view.print_message('Book number invalid.')
-      return;
+      return
     end
 
     add_rental(person, book)
