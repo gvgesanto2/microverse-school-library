@@ -17,7 +17,7 @@ class AppController
       },
       {
         title: 'List all people',
-        handler: lambda { puts 'Selected option 2' }
+        handler: lambda { @people_controller.handle_list_people }
       },
       {
         title: 'List all classrooms',

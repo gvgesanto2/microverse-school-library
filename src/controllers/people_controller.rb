@@ -27,4 +27,9 @@ class PeopleController
 
     @options[user_option - 1][:handler].call if user_option
   end
+
+  def handle_list_people
+    @teachers_controller.handle_list_teachers
+    @students_controller.handle_list_students
+  end
 end

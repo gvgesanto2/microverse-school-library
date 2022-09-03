@@ -32,4 +32,8 @@ class StudentsController
       @students_view.print_message('No classrooms available. Please, register a classroom before registering a student.')
     end
   end
+
+  def handle_list_students
+    @students_view.print_students(@students)
+  end
 end

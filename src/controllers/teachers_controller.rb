@@ -19,4 +19,8 @@ class TeachersController
     add_teacher(name, age, specialization)
     @teachers_view.print_success_message
   end
+
+  def handle_list_teachers
+    @teachers_view.print_teachers(@teachers)
+  end
 end

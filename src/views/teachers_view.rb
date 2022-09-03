@@ -18,10 +18,14 @@ class TeachersView
       puts "No teachers available."
     else
       lines_to_print = teachers.map.with_index do |teacher, index|
-        "#{index + 1}- ID: #{teacher.id} | Name: #{teacher.name} | Age: #{teacher.age} | Specialization: #{teacher.specialization}"
+        "#{index + 1}- #{get_teacher_string(teacher)}"
       end
       puts gen_frame(lines_to_print, 5)
     end
+  end
+
+  def get_teacher_string(teacher)
+    "ID: #{teacher.id} | Name: #{teacher.name} | Age: #{teacher.age} | Specialization: #{teacher.specialization}"
   end
 
   def print_success_message
