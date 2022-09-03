@@ -23,4 +23,12 @@ class TeachersController
   def handle_list_teachers
     @teachers_view.print_teachers(@teachers)
   end
+
+  def find_teacher_by_id(id)
+    @teachers.find { |teacher| teacher.id == id }
+  end
+
+  def has_teachers?
+    !@teachers.empty?
+  end
 end

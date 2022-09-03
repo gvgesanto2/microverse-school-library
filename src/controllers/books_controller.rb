@@ -1,5 +1,6 @@
 require_relative '../models/book'
 require_relative '../views/books_view'
+require_relative '../views/menu_view'
 
 class BooksController
   def initialize
@@ -21,5 +22,17 @@ class BooksController
 
   def handle_list_books
     @books_view.print_books(@books)
+  end
+
+  def list_as_options
+    books_options = @books.map { |book| @books_view.get_book_string(book) }
+    book_menu_view = MenuView.new(books_options)
+    book_menu_view.show_options
+    book_chosen = book_menu_view.get_user_option
+    book_chosen ? @books[book_chosen - 1] : nil
+  end
+
+  def has_books?
+    !@books.empty?
   end
 end

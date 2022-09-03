@@ -14,10 +14,14 @@ class BooksView
       puts "No books available."
     else
       lines_to_print = books.map.with_index do |book, index|
-        "#{index + 1}- Title: #{book.title} | Author: #{book.author}"
+        "#{index + 1}- #{get_book_string(book)}"
       end
       puts gen_frame(lines_to_print, 5)
     end
+  end
+
+  def get_book_string(book)
+    "Title: #{book.title} | Author: #{book.author}"
   end
 
   def print_success_message

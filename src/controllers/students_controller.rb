@@ -36,4 +36,12 @@ class StudentsController
   def handle_list_students
     @students_view.print_students(@students)
   end
+
+  def find_student_by_id(id)
+    @students.find { |student| student.id == id }
+  end
+
+  def has_students?
+    !@students.empty?
+  end
 end

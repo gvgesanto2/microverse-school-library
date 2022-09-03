@@ -32,4 +32,14 @@ class PeopleController
     @teachers_controller.handle_list_teachers
     @students_controller.handle_list_students
   end
+
+  def has_people?
+    @teachers_controller.has_teachers? || @students_controller.has_students?
+  end
+
+  def find_person_by_id(id)
+    teacher = @teachers_controller.find_teacher_by_id(id)
+    return teacher if teacher
+    @students_controller.find_student_by_id(id)
+  end
 end

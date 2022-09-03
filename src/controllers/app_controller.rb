@@ -2,6 +2,7 @@ require_relative '../views/menu_view'
 require_relative './books_controller'
 require_relative './people_controller'
 require_relative './classrooms_controller'
+require_relative './rentals_controller'
 
 class AppController
   def initialize
@@ -9,6 +10,7 @@ class AppController
     @books_controller = BooksController.new
     @classrooms_controller = ClassroomsController.new
     @people_controller = PeopleController.new(@classrooms_controller)
+    @rental_controller = RentalsController.new(@people_controller, @books_controller)
 
     @options = [
       {
@@ -37,15 +39,11 @@ class AppController
       },
       {
         title: 'Rent a book',
-        handler: lambda { puts 'Selected option 2' }
+        handler: lambda { @rental_controller.handle_register_rental }
       },
       {
         title: 'List all rentals of a person',
-        handler: lambda { puts 'Selected option 2' }
-      },
-      {
-        title: 'List all students of a classroom',
-        handler: lambda { puts 'Selected option 2' }
+        handler: lambda { @rental_controller.handle_list_rentals_by_person }
       },
       {
         title: 'Exit',
