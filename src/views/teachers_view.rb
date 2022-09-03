@@ -1,6 +1,14 @@
 require_relative '../utils/console.utils'
 
 class TeachersView
+  def get_name
+    get_user_input('Enter the teacher\'s name: ')
+  end
+
+  def get_age
+    get_user_input('Enter the teacher\'s age: ')
+  end
+
   def get_specialization
     get_user_input('Enter the teacher\'s specialization: ')
   end

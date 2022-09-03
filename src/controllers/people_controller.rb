@@ -1,26 +1,22 @@
 require_relative '../views/menu_view'
-require_relative '../views/people_view'
 require_relative './teachers_controller'
+require_relative './students_controller'
 
 class PeopleController
-  def initialize
-    @people_view = PeopleView.new
+  def initialize(classrooms_controller)
     @teachers_controller = TeachersController.new
+    @students_controller = StudentsController.new(classrooms_controller)
 
     @options = [
       {
         title: 'Register a student',
-        handler: lambda { |name, age| handle_register_student(name, age) }
+        handler: lambda { @students_controller.handle_register_student }
       },
       {
         title: 'Register a teacher',
-        handler: lambda { |name, age| @teachers_controller.handle_register_teacher(name, age) }
+        handler: lambda { @teachers_controller.handle_register_teacher }
       }
     ]
-  end
-
-  def handle_register_student(name, age)
-    puts 'Register student'
   end
 
   def handle_register_person
@@ -29,10 +25,6 @@ class PeopleController
     person_menu_view.show_options
     user_option = person_menu_view.get_user_option
 
-    if user_option
-      name = @people_view.get_name
-      age = @people_view.get_age
-      @options[user_option - 1][:handler].call(name, age)
-    end
+    @options[user_option - 1][:handler].call if user_option
   end
 end
