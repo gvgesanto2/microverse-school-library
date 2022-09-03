@@ -18,4 +18,8 @@ class BooksController
     add_book(title, author)
     @books_view.print_success_message
   end
+
+  def handle_list_books
+    @books_view.print_books(@books)
+  end
 end

@@ -21,7 +21,7 @@ class AppController
   def handle_user_option(option)
     case option
     when 1
-      puts 'Selected option 1'
+      @books_controller.handle_list_books
     when 2
       puts 'Selected option 2'
     when 3
