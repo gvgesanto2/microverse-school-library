@@ -49,3 +49,7 @@ def gen_frame(lines_to_print, padding)
   frame.push(border_bottom_str)
   frame
 end
+
+def print_message(msg)
+  puts gen_frame([msg], 5)
+end
